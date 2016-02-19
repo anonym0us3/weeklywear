@@ -1,14 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Weeklywear</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeeklyWear</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">WeeklyWear</a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      </div>
 
-<%= yield %>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+            <li><%= link_to "Your Profile", about_path %></li>
+            <li><%= link_to "Your Tshirts", tshirts_path %></li>
+            <li><%= link_to "Settings", user_path(current_user) %></li>
+            <li><%= link_to "Vote", vote_path %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
+          <% else %>
+            <li><%= link_to "Sign Up", new_user_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
+          <% end %>
+        </ul>
+      </div><!-- /.navbar-collapse -->
 
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <% flash.each do |name, msg| %>
+    <p>
+      <small> <%= name.capitalize %>: <%= msg %> </small>
+    </p>
+  <% end %>
+  
+  <%= yield %>
+  
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">
+        © WeeklyWear 2016
+      </span>
+    </div>
+  </footer>
 </body>
+
 </html>
