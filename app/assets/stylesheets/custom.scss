@@ -1,6 +1,11 @@
+// COLORS //
+$lightBlue: #add8e6;
+$white: #FFFFFF;
+
 .jumbotron{
 	background-image: image-url("tees.png");
-	color: $white;
-	background-size: cover;
+	background-color: $lightBlue;
+	background-size: tile;
 	height: 800px;
+	opacity: 0.5px;
 }
