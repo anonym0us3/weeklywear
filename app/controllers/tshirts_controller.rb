@@ -15,11 +15,16 @@ class TshirtsController < ApplicationController
     redirect_to tshirts_path
   end
 
+  # Display 1 specific tshirt, by ID
+  def show
+    @tshirt = Tshirt.find_by_id(params[:id])
+  end
+
   private
 
   # Whitelist of permitted form data
   def tshirt_params
     params.require(:tshirt).permit(:name, :image)
   end
-  
+
 end

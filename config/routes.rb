@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get "/tshirts", to: "tshirts#index", as: "tshirts"
   get "/tshirts/new", to: "tshirts#new", as: "new_tshirt"
   post "/tshirts", to: "tshirts#create"
+  get "/tshirts/:id", to: "tshirts#show", as: "tshirt"
 
 end
