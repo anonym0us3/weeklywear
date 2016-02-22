@@ -1,6 +1,6 @@
 class TshirtsController < ApplicationController
 
   def index
-    @libraries = Library.all
+    @tshirts = Tshirt.all
   end
 end
