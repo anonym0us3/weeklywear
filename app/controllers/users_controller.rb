@@ -1,31 +1,35 @@
 class UsersController < ApplicationController
+
+  # Display list of users
   def index
     @users = User.all
     render :index
   end
 
+  # Display signup form for creating new user
   def new
     @user = User.new
     render :new
   end
 
+  # Process form data & create new user; login & redirect to user's page
   def create
-    user_params = params.require(:user).permit(:username, :email, :password)
     @user = User.create(user_params)
-
-    redirect_to root_path
+    login(@user)
+    redirect_to @user
   end
 
+  # Display 1 specific user, by ID
   def show
     @user = User.find_by_id(params[:id])
     render :show
   end
 
-  def create
-    user_params = params.require(:user).permit(:username, :email, :password)
-    @user = User.create(user_params)
-    login(@user) # <-- login the user
-    redirect_to @user # <-- go to show
+  private
+
+  # Whitelist of permitted form data
+  def user_params
+    params.require(:user).permit(:username, :email, :password)
   end
 
 end
