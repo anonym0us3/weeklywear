@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
 
   get "/tshirts", to: "tshirts#index"
+  get "/tshirts/new", to: "tshirts#new", as: "new_tshirt"
 
 end
