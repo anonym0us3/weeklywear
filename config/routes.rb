@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
   post "/sessions", to: "sessions#create"
 
-  get "/tshirts", to: "tshirts#index"
+  get "/tshirts", to: "tshirts#index", as: "tshirts"
   get "/tshirts/new", to: "tshirts#new", as: "new_tshirt"
+  post "/tshirts", to: "tshirts#create"
 
 end
