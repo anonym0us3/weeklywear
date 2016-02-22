@@ -1,3 +1,7 @@
 <div>
   Welcome, <%= @user.username %>
 </div>
+
+<div>
+  <%= image_tag @user.avatar.url, class: "img-responsive" %>
+</div>
