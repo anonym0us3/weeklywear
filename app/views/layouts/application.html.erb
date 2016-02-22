@@ -28,7 +28,9 @@
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
             <li><%= link_to "Profile", user_path(current_user) %></li>
-
+            <li><%= link_to "Tshirts", tshirts_path %></li>
+            <li><%= link_to "Settings", settings_path(current_user) %></li>
+            <li><%= link_to "Vote", users_path %></li>
             <li><%= link_to "Log Out", logout_path %></li>
           <% else %>
             <li><%= link_to "Sign Up", new_user_path %></li>
