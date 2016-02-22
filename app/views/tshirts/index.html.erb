@@ -3,5 +3,7 @@
     <h3><%= tshirt.name %></h3>
   </div>
   <br>
-<% end %>
-
+  <div>
+  <%= image_tag tshirt.image.url, class: "img-responsive" %>
+  </div>
+  <% end %>

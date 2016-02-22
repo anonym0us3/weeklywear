@@ -1,9 +1,9 @@
 class TshirtsController < ApplicationController
 
   def index
-    # @tshirts = Tshirt.all
-    @user = User.find(params[:user_id])
-    @tshirts = @user.tshirts
+    @tshirts = Tshirt.all
+    @user = @current_user
+    # @tshirts = @user.tshirts
   end
 
   def new
