@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   # Whitelist of permitted form data
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password, :avatar)
   end
 
 end
