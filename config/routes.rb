@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   get "/tshirts/new", to: "tshirts#new", as: "new_tshirt"
   post "/tshirts", to: "tshirts#create"
   get "/tshirts/:id", to: "tshirts#show", as: "tshirt"
+  patch "/tshirts/:id", to: "tshirts#update"
+  delete "/tshirts/:id", to: "tshirts#destroy", as: "delete_tshirt"
 
   get "/users/:user_id/tshirts", to: "tshirts#user_tshirts", as: "user_tshirts"
+  get "/users/:user_id/tshirts/:id", to: "tshirts#edit", as: "edit_tshirt"
 
 end
