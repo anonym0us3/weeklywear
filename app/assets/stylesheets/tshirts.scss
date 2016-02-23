@@ -2,10 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.img-responsive{
-	width: 250px;
-}
-
 .profile{
 	padding-top: 30px;
+}
+
+html, body, .tshirtmanager, .row, .col-md-3, .col-md-9{
+	height:100%;
+}
+
+.col-md-4{
+	height:50%
+}
+
+.tshirtgrid{
+	overflow:auto;
 }

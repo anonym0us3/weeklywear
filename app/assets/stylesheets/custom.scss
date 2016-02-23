@@ -4,8 +4,8 @@ $white: #FFFFFF;
 
 .jumbotron{
 	background-image: image-url("tees.png");
-	background-color: $lightBlue;
-	background-size: tile;
+	background-color: lightblue;
+	background-size: contain;
 	height: 850px;
 	opacity: 0.5px;
 }
