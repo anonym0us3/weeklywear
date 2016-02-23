@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="text-center info-banner center-block">T-shirt Editor</h1>
+
+  <%= form_for @tshirt do |f| %>
+
+    <div>
+    <%= image_tag @tshirt.image.url, class: "img-responsive half center-block" %>
+    </div>
+
+    <div class="half center-block">
+
+      <div class="form-group">
+        <%= f.label(:name, "Name") %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div style="text-align:center">
+        <%= f.submit "Update T-shirt details", class: "btn btn-success inline-block" %>
+        <%= link_to "Back to T-shirts", user_tshirts_path(current_user), class: "btn btn-warning inline-block" %>
+      </div>
+
+    </div>
+
+  <% end %>
+
+</div>
