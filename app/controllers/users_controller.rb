@@ -22,6 +22,24 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
   end
 
+  def edit
+    @user = User.find_by_id(params[:id])
+  end
+
+  def update
+    user = User.find_by_id(params[:id])
+    user.update_attributes(user_params)
+
+    redirect_to user_path
+  end
+
+  def destroy
+    user = User.find_by_id(params[:id])
+    user.destroy
+
+    redirect_to root_path
+  end
+
   private
 
   # Whitelist of permitted form data

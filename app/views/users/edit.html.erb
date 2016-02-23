@@ -1,0 +1,34 @@
+<div class="container">
+  <h1 class="text-center info-banner center-block">Edit your account</h1>
+
+  <%= form_for @user do |f| %>
+
+    <div class="half center-block">
+
+      <div class="form-group">
+        <%= f.label(:username, "Username") %>
+        <%= f.text_field :username, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label(:email, "Email Address") %>
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
+      <div class="form-group half center-block">
+        <%= f.label(:password, "Password") %>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+      <div style="display:inline-block">
+        <%= f.submit "Update Profile", class: "btn btn-default center-block" %>
+      </div>
+      
+    </div>
+
+  <% end %>
+  
+  <br>
+
+  <div style="display:inline-block">
+    <%= button_to "Delete", @user, :data => {:confirm => 'Are you sure you want to delete your account?'}, method: :delete, class: "btn btn-danger" %>
+  </div>
+
+</div>

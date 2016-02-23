@@ -1,9 +1,8 @@
 class TshirtsController < ApplicationController
 
+  # Display list of t-shirts
   def index
     @tshirts = Tshirt.all
-    @user = @current_user
-    # @tshirts = @user.tshirts
   end
 
   def new
@@ -12,7 +11,8 @@ class TshirtsController < ApplicationController
 
 
   def create
-    @tshirt = Tshirt.create(tshirt_params)
+    @tshirt = Tshirt.new(tshirt_params)
+    @tshirt.save
 
     redirect_to tshirts_path
   end
@@ -22,11 +22,15 @@ class TshirtsController < ApplicationController
     @tshirt = Tshirt.find_by_id(params[:id])
   end
 
+  def user_tshirts
+    @tshirts = Tshirt.all
+  end
+
   private
 
   # Whitelist of permitted form data
   def tshirt_params
-    params.require(:tshirt).permit(:name, :image)
+    params.require(:tshirt).permit(:name, :image).merge(:user_id => current_user.id)
   end
 
 end

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get "users/new", to: "users#new", as: "new_user"
   post "users", to: "users#create"
   get "/users/:id", to: "users#show", as: "user"
-  get "/users/:user_id/tshirts", to: "tshirts#index", as: "user_tshirts"
+  get "/users/:id/edit", to: "users#edit", as: "edit_user"
+  patch "/users/:id", to: "users#update"
+  delete "/users/:id", to: "users#destroy", as: "delete_user"
 
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"
@@ -15,5 +17,7 @@ Rails.application.routes.draw do
   get "/tshirts/new", to: "tshirts#new", as: "new_tshirt"
   post "/tshirts", to: "tshirts#create"
   get "/tshirts/:id", to: "tshirts#show", as: "tshirt"
+
+  get "/users/:user_id/tshirts", to: "tshirts#user_tshirts", as: "user_tshirts"
 
 end

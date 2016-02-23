@@ -1,5 +1,5 @@
 <div class="container forms">
-  <h1 class="text-center info-banner center-block">Add a Tshirt!</h1>
+  <h1 class="text-center info-banner center-block">Add a new T-shirt!</h1>
 
   <%= form_for @tshirt do |f| %>
 
@@ -9,13 +9,13 @@
         <%= f.text_field :name, placeholder: "Name" %>
       </div>
       <div class="form-group">
-        <%= f.label(:image, "Upload an image of the Tshirt") %>
+        <%= f.label(:image, "Upload an image of the T-shirt") %>
         <%= f.file_field :image %>
       </div>
 
       <br>
 
-      <%= f.submit "Add new Tshirt", class: "btn btn-default center-block" %>
+      <%= f.submit "Add new T-shirt", class: "btn btn-default center-block" %>
 
     </div>
   <% end %>
