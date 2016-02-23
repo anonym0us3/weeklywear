@@ -1,27 +1,46 @@
-<div class="container-fluid profile">
+<div class="container-fluid tshirtmanager">
+  <h1 class="text-center" style="font-weight:bold">
+    T-shirt Management
+  </h1>
+
+  <br>
+  
   <div class="row">
-    <div class="col-lg-2 col-sm-offset-1">
-      <%= button_to "Upload a new T-shirt", new_tshirt_path %>
+    <div class="col-md-3">
+      <%= link_to "Add a new T-shirt", new_tshirt_path, class: "btn btn-primary" %>
+      <br>
+      <br>
+      <%= link_to "Back to Profile", user_path(current_user), class: "btn btn-warning" %>
     </div>
-    
-    <br>
-    <br>
-    <br>
 
-    <div class="col-lg-6">
-      <% @tshirts.where(user_id: current_user).each do |tshirt| %>
-        <div>
-          <h3>
-            <%= tshirt.name %>
-          </h3>
+    <div class="col-md-9" style="height:100%">
+      <div class="row tshirtgrid" style="height:100%">
+      
+      <!-- Checking to see if user has t-shirts -->
+      <% if @tshirts.where(user_id: current_user).exists? %>
+        
+        <!-- If true, executes this block of code -->
+        <% @tshirts.where(user_id: current_user).each do |tshirt| %>
+        <div class="col-md-4">
+            <div>
+              <%= image_tag tshirt.image.url, class: "img-responsive" %>
+            </div>
+            <div>
+              <%= link_to "Edit", edit_tshirt_path(current_user, tshirt.id), class: "btn btn-info inline-block" %>
+              <%= button_to "Delete", delete_tshirt_path(tshirt), :data => {:confirm => 'Are you sure you want to delete this t-shirt?'}, method: :delete, class: "btn btn-danger inline-block" %>
+            </div>
         </div>
-        <br>
-        <div>
-          <%= image_tag tshirt.image.url, class: "img-responsive" %>
-        </div>
+        <% end %>
+      
+      <!-- Otherwise, tells user that they are Teh Phail and to upload some t-shirts! -->
+      <% else %>
+      <br>
+      <br>
+        <h2 style="color: red; font-weight: bold">You have no t-shirts, go upload some!</h2>
       <% end %>
-    </div>
 
+      </div>
+    </div>
   </div>
 
 </div>
