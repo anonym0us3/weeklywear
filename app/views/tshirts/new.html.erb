@@ -1,6 +1,8 @@
 <div class="container forms">
   <h1 class="text-center info-banner center-block">Add a new T-shirt!</h1>
 
+  <br>
+
   <%= form_for @tshirt do |f| %>
 
     <div class="half center-block">
@@ -15,7 +17,7 @@
 
       <br>
 
-      <%= f.submit "Add new T-shirt", class: "btn btn-default center-block" %>
+      <%= f.submit "Submit new T-shirt", class: "btn btn-success center-block" %>
 
     </div>
   <% end %>
