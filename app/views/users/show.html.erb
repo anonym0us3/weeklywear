@@ -1,7 +1,38 @@
-<div>
-  Welcome, <%= @user.username %>
-</div>
+<div class="container-fluid profile">
+  <div class="row">
+    <div class="col-sm-2 col-sm-offset-1" style="text-align:center">
+      <%= image_tag @user.avatar.url, class: "img-responsive" %>
+      <hr>
+      <h3 class="text-muted">
+        Username: <%= @user.username %>
+      </h3>
+      <hr>
+      <h4 class="text-muted">
+        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+        Join Date: <%= @user.created_at.localtime.strftime("%Y/%m/%d") %>
+      </h4>
+    </div>
+    
+    <br>
+    <br>
+    <br>
 
-<div>
-  <%= image_tag @user.avatar.url, class: "img-responsive" %>
+    <div class="col-lg-8" style="text-align:center">
+      <h1>
+        <%= link_to "MANAGE T-SHIRTS", user_tshirts_path(current_user) %>
+      </h1>
+
+      <br>
+      <br>
+      <br>
+
+      <h1>
+        <%= link_to "GO FORTH AND VOTE!", users_path %>
+      </h1>
+    </div>
+
+  </div>
+
+  <hr>
+
 </div>
