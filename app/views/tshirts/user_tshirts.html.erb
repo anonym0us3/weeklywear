@@ -1,9 +1,28 @@
-<% @tshirts.where(user_id: current_user).each do |tshirt| %>
-  <div>
-    <h3><%= tshirt.name %></h3>
+<div class="container-fluid profile">
+  <div class="row">
+    <div class="col-lg-2 col-sm-offset-1">
+      <%= button_to "Upload a new T-shirt", new_tshirt_path %>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+
+    <div class="col-lg-6">
+      <% @tshirts.where(user_id: current_user).each do |tshirt| %>
+        <div>
+          <h3>
+            <%= tshirt.name %>
+          </h3>
+        </div>
+        <br>
+        <div>
+          <%= image_tag tshirt.image.url, class: "img-responsive" %>
+        </div>
+      <% end %>
+    </div>
+
   </div>
-  <br>
-  <div>
-  <%= image_tag tshirt.image.url, class: "img-responsive" %>
-  </div>
-  <% end %>
+
+</div>
+
