@@ -19,32 +19,38 @@ class UsersController < ApplicationController
 
   # Display 1 specific user, by ID
   def show
-    @user = User.find_by_id(params[:id])
+    @user = find_user
   end
 
   def edit
-    @user = User.find_by_id(params[:id])
+    @user = find_user
   end
 
   def update
-    user = User.find_by_id(params[:id])
+    user = find_user
     user.update_attributes(user_params)
 
     redirect_to user_path
   end
 
   def destroy
-    user = User.find_by_id(params[:id])
+    user = find_user
     user.destroy
 
     redirect_to root_path
   end
+
 
   private
 
   # Whitelist of permitted form data
   def user_params
     params.require(:user).permit(:username, :email, :password, :avatar)
+  end
+
+  # Dunno if this is appropriate, but attempting DRYness for show, edit, update, destroy methods
+  def find_user
+    User.find_by_id(params[:id])
   end
 
 end
