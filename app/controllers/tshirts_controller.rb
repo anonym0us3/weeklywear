@@ -23,6 +23,7 @@ class TshirtsController < ApplicationController
   end
 
   def user_tshirts
+    @user = User.find_by_id(params[:user_id])
     @tshirts = Tshirt.all
   end
 
