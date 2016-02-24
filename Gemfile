@@ -28,6 +28,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "paperclip", "~> 4.3"
 
+gem "hirb"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
