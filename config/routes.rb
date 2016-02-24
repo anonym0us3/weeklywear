@@ -21,9 +21,9 @@ Rails.application.routes.draw do
   delete "/tshirts/:id", to: "tshirts#destroy", as: "delete_tshirt"
 
   get "/users/:user_id/tshirts", to: "tshirts#user_tshirts", as: "user_tshirts"
+  get "/users/:user_id/tshirts/vote", to: "votes#index", as: "voting"
   get "/users/:user_id/tshirts/:id", to: "tshirts#edit", as: "edit_tshirt"
 
-  get "/users/:user_id/vote", to: "votes#index", as: "voting"
-  post "/users/:user_id/vote", to: "votes#create"
+  post "/tshirts/:tshirt_id/vote", to: "votes#create", as: "vote"
 
 end
