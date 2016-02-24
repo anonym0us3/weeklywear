@@ -24,5 +24,6 @@ Rails.application.routes.draw do
   get "/users/:user_id/tshirts/:id", to: "tshirts#edit", as: "edit_tshirt"
 
   get "/users/:user_id/vote", to: "votes#index", as: "voting"
+  post "/users/:user_id/vote", to: "votes#create"
 
 end
