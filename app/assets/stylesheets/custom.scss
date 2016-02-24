@@ -6,13 +6,14 @@ $white: #FFFFFF;
 	background-image: image-url("tees.png");
 	background-color: $lightBlue !important;
 	background-size: contain;
-	height: 850px;
+	height: 890px;
 	opacity: 0.5px;
 }
 
 .footer{
 	position: absolute;
 	bottom: 0px;
+	padding: 0px;
+	margin: 0px;
 	width: 100%;
-	height: 40px;
 }
