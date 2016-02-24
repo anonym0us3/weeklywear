@@ -15,3 +15,10 @@
 //= require bootstrap.min
 //= require turbolinks
 //= require_tree .
+
+$(document).on("page:change", function() {
+	setTimeout(function(){
+		$(".alert-success").fadeOut();
+		
+	},2000);
+});
