@@ -8,14 +8,14 @@
         <% @tshirts.where(user_id: @user).each do |tshirt| %>
           <div class="col-md-4">
               <div>
-                <%= image_tag tshirt.image.url, class: "img-responsive" %>
+                <%= image_tag tshirt.image.url, class: "img-responsive center-block" %>
               </div>
 
               <!-- Checks to see if not current user -->
               <% if current_user != @user %>
 
                 <!-- If not current user, adds a vote button under each tshirt -->
-                <div class="votebutton">
+                <div class="votebutton" style="text-align:center">
                   <%= button_to "Vote", vote_path(tshirt), :data => {:confirm => 'NOTE: you may only vote once per day. Please confirm that you want to vote on this t-shirt.'}, method: :post, class: "btn btn-info" %>
                 </div>
 
