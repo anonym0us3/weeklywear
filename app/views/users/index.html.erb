@@ -6,22 +6,53 @@
       <h3 class="text-muted">
         Username: <%= current_user.username %>
       </h3>
+
       <hr>
+
       <h4>
-        <%= link_to "/USER/:ID/VOTES", user_tshirts_path(current_user) %>
+        <strong><%= link_to "Your voting page", voting_path(current_user) %></strong>
       </h4>
     </div>
     
     <br>
     <br>
-    <br>
 
     <div class="col-lg-8" style="text-align:center">
-      <h1>
-        <%= link_to "MANAGE T-SHIRTS", user_tshirts_path(current_user) %>
-      </h1>
+
+      <!-- Checks to see if any other users exist -->
+      <% if @users.where.not(:id => current_user.id).exists? %>
+
+        <!-- Runs loop for all other users -->
+        
+        <% tshirt_exists = false %>
+        <% @users.where.not(:id => current_user.id).each do |user| %>
+
+          <!-- Then for each user with t-shirts, generates link to their respective vote page -->
+          <% if user.tshirts.count > 0 %>
+            
+            <p>
+              <%= link_to "Vote on #{user.username}'s T-shirts!", voting_path(user) %>
+            </p>
+            <br>
+            <% tshirt_exists = true %>
+          <% end %>
+          
+        <% end %>
+        <% unless tshirt_exists %>
+          <h2 style="color: red; font-weight: bold">Ruh roh! No one else has bothered to upload any t-shirts.
+          <br>
+          <br>
+          Shame on them, SHAAAAAAAME! They've gone done made the polar bear sad :(</h2>
+          <br>
+          <%= image_tag("shame.jpg") %>
+        <% end %>
+      <!-- Otherwise, if no other users besides current_user exist -->
+      <% else %>
+        <br>
+        <br>
+        <h2 style="color: red; font-weight: bold">Oh noes: no other users! Invite your friends to sign up, yo!</h2>
+      <% end %>
+
     </div>
-
   </div>
-
 </div>
