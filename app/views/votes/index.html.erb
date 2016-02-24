@@ -4,16 +4,29 @@
     <div class="col-md-12" style="height:100%">
       <div class="row votinggrid" style="height:100%">
       
+        <!-- Runs loop for all users with tshirts (based on params ID generated from users index page) -->
         <% @tshirts.where(user_id: @user).each do |tshirt| %>
-        <div class="col-md-4">
-            <div>
-              <%= image_tag tshirt.image.url, class: "img-responsive" %>
-            </div>
-            <div>
-              <%= button_to "Vote", :data => {:confirm => 'Are you sure you want to vote on this t-shirt?'}, method: :post, class: "btn btn-info inline-block" %>
-            </div>
-        </div>
+          <div class="col-md-4">
+              <div>
+                <%= image_tag tshirt.image.url, class: "img-responsive" %>
+              </div>
+
+              <!-- Checks to see if not current user -->
+              <% if current_user != @user %>
+
+                <!-- If not current user, adds a vote button under each tshirt -->
+                <div>
+                  <%= button_to "Vote", :data => {:confirm => 'Are you sure you want to vote on this t-shirt?'}, method: :post, class: "btn btn-info inline-block" %>
+                </div>
+
+              <!-- Else, nothing happens -->
+              <% else %>
+
+              <% end %>
+          </div>
         <% end %>
+
       </div>
     </div>
+    
 </div>
