@@ -5,4 +5,7 @@ class VotesController < ApplicationController
     @tshirts = Tshirt.all
   end
 
+  def create
+  end
+
 end
