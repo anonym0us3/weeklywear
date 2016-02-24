@@ -16,7 +16,7 @@
 
                 <!-- If not current user, adds a vote button under each tshirt -->
                 <div class="votebutton">
-                  <%= button_to "Vote", users_path, :data => {:confirm => 'NOTE: you may only vote once per day. Please confirm that you want to vote on this t-shirt.'}, method: :post, class: "btn btn-info" %>
+                  <%= button_to "Vote", vote_path(tshirt), :data => {:confirm => 'NOTE: you may only vote once per day. Please confirm that you want to vote on this t-shirt.'}, method: :post, class: "btn btn-info" %>
                 </div>
 
               <!-- Else, do nothing -->
