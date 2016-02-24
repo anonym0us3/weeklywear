@@ -8,10 +8,15 @@
       </h3>
 
       <hr>
-
+      <% if current_user.tshirts.count > 0 %>
       <h4>
         <strong><%= link_to "Your voting page", voting_path(current_user) %></strong>
       </h4>
+      <% else %>
+      <h4>
+        <strong><%= link_to "Add some t-shirts!", user_tshirts_path(current_user) %></strong>
+      </h4>
+      <% end %>
     </div>
     
     <br>
