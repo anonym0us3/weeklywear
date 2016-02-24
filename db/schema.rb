@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222193333) do
+ActiveRecord::Schema.define(version: 20160224004235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,5 +41,17 @@ ActiveRecord::Schema.define(version: 20160222193333) do
     t.datetime "avatar_updated_at"
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "tshirt_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "votes", ["tshirt_id"], name: "index_votes_on_tshirt_id", using: :btree
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
+
   add_foreign_key "tshirts", "users"
+  add_foreign_key "votes", "tshirts"
+  add_foreign_key "votes", "users"
 end
