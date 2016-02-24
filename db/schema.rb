@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20160224223942) do
     t.integer  "tshirt_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "votee"
+    t.integer  "votee_id"
   end
 
   add_index "votes", ["tshirt_id"], name: "index_votes_on_tshirt_id", using: :btree
