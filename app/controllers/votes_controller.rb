@@ -8,6 +8,7 @@ class VotesController < ApplicationController
   def create
     @vote = Vote.new(:user_id => current_user.id, :tshirt_id => params[:tshirt_id])
     @vote.save
+    flash[:alert] = "Thanks for voting on!"
 
     redirect_to users_path
   end
