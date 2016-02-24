@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   get "/users/:user_id/tshirts", to: "tshirts#user_tshirts", as: "user_tshirts"
   get "/users/:user_id/tshirts/:id", to: "tshirts#edit", as: "edit_tshirt"
 
+  get "/users/:user_id/vote", to: "votes#index", as: "voting"
+
 end
