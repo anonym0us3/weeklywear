@@ -18,7 +18,7 @@
 
 $(document).on("page:change", function() {
 	setTimeout(function(){
-		$(".alert-success").fadeOut();
+		$("#flash_messages").fadeOut();
 		
 	},2000);
 });
