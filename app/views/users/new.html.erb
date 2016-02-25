@@ -10,11 +10,11 @@
       </div>
       <div class="form-group">
         <%= f.label(:email, "Email") %>
-        <%= f.email_field :email, placeholder: "Email", :required => true, class: "form-control" %>
+        <%= f.email_field :email, placeholder: "Example: email@domain.tld", :required => true, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label(:password, "Password") %>
-        <%= f.password_field :password, placeholder: "Password", :required => true, class: "form-control" %>
+        <%= f.label(:password, "Password: (minimum 8 characters)") %>
+        <%= f.password_field :password, placeholder: "Example: p@$w0rd!", :required => true, class: "form-control" %>
       </div>
       <div class="form-group">
         <%= f.label(:avatar, "Upload an avatar") %>
