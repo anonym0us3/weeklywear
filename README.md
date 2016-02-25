@@ -55,7 +55,7 @@ weeklywear allows users to upload photos of their t-shirts for other users to vo
 	* RSpec
 	* Bootstrap
 	* Hirb
-* Third Party APIs
+* 3rd-Party APIs
 	* Amazon AWS S3
 * Database
 	*  PostgreSQL
