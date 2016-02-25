@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :logged_in?, only: [:index, :edit, :show]
+
   # Display list of users
   def index
     @users = User.all
@@ -13,8 +15,14 @@ class UsersController < ApplicationController
   # Process form data & create new user; login & redirect to user's page
   def create
     @user = User.create(user_params)
-    login(@user)
-    redirect_to @user
+    if @user.save
+      flash[:notice] = "Successfully created user"
+      login(@user)
+      redirect_to @user
+    else
+      flash[:error] = @user.errors.full_messages.join(', ')
+      redirect_to new_user_path
+    end
   end
 
   # Display 1 specific user, by ID
@@ -29,8 +37,15 @@ class UsersController < ApplicationController
   def update
     user = find_user
     user.update_attributes(user_params)
+    if user.save
+      flash[:notice] = "Profile updated successfully!"
 
-    redirect_to user_path
+      redirect_to user_path
+    else
+      flash[:error] = "Please use proper of email & password."
+
+      redirect_to edit_user_path
+    end
   end
 
   def destroy
