@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
 
-  VALID_PASSWORD_REGEX = /\S.{8,}/
+  VALID_PASSWORD_REGEX = /\S.{7,}/
   validates :password,
     format: { with: VALID_PASSWORD_REGEX }
 
