@@ -1,3 +1,5 @@
+![PRESENTATION](http://i.imgur.com/IDfbpx2.png)
+
 # weeklywear: An App for the Indecisive
 weeklywear allows users to upload photos of their t-shirts for other users to vote on. Users can vote once per day (Feature Coming Soon!) for each user who has uploaded tees. Every Sunday, weeklywear sends out an email [Feature Coming Soon!] to each user who uploaded shirts which received votes, of which tee had the most vosts for that week. That tshirt is removed from circulation (Feature Coming Soon!) for the following week and the user is then required (honesty-pending) to wear the winning design the following day.
 
