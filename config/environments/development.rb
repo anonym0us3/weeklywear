@@ -48,6 +48,5 @@ Rails.application.configure do
     :region => "us-west-1"
   },
     :url =>':s3_domain_url',
-
   }
 end
