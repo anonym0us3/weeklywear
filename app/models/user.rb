@@ -18,9 +18,8 @@ class User < ActiveRecord::Base
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
 
-  VALID_PASSWORD_REGEX = /[a-zA-Z0-9]+/
+  VALID_PASSWORD_REGEX = /\S.{8,}/
   validates :password,
-    length: { minimum: 8 },
     format: { with: VALID_PASSWORD_REGEX }
 
   def self.confirm(params)
