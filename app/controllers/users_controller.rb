@@ -63,7 +63,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :email, :password, :avatar)
   end
 
-  # Dunno if this is appropriate, but attempting DRYness for show, edit, update, destroy methods
+  # DRY'ing user show, edit, update & destroy methods
   def find_user
     User.find_by_id(params[:id])
   end
