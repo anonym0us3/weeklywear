@@ -53,15 +53,16 @@ weeklywear allows users to upload photos of their t-shirts for other users to vo
 	* bcrypt
 	* RSpec
 	* Bootstrap
-	* HTTP
+	* Hirb
+* Third Party APIs
+	* Amazon AWS S3
 * Database
 	*  PostgreSQL
 
 # Future Development
-* User can add a place to vote on.
-
-# Contributors
-* <a href="https://github.com/isangieri" target="_blank">Is Angieri</a>
-* <a href="https://github.com/breonknight" target="_blank">Breon Knight</a>
-* <a href="https://github.com/bw-giraffe" target="_blank">Rich Rizzo</a>
-* <a href="https://github.com/anonym0us3" target="_blank">Nathan</a>
+* Limit user to voting once per day, per every other users' t-shirts
+* Use Heroku Scheduler to run CRON jobs on the server to check for Win conditions each week
+** Win condition would consist of each user's top-voted t-shirt being mailed to the user, and then removed from circulation so that it cannot be voted on again until the user resets the DB.
+** To reset the DB, user would have a "Laundry" (aka reset) button on their profile page.
+* Use ActionMailer gem to send digest each Sunday to each user who had votes recorded for 1 or more of their t-shirts, letting them know which t-shirt had the most votes
+* On a user's profile page, if the user has t-shirts with votes, display the two with the most votes.
