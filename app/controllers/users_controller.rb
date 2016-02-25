@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 
       redirect_to user_path
     else
-      flash[:error] = "Please use proper of email & password."
+      flash[:error] = "Please use proper email & password."
 
       redirect_to edit_user_path
     end
