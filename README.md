@@ -11,7 +11,7 @@ weeklywear allows users to upload photos of their t-shirts for other users to vo
 
 # Getting Started
 * Fork this repo and clone it onto your local machine.
-* Change directory into our `fleeking-beauty` directory.
+* CD into the `weeklywear` directory.
 * Run `bundle install` to install gems.
 * ImageMagick must be installed on your machine (Mac OS X - `brew install imagemagick`, Ubuntu - `sudo apt-get install imagemagick -y`).
 * Run `rake db:setup` to create and migrate the database (PostgreSQL must be installed on your machine).
