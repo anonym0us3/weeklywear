@@ -7,15 +7,15 @@
 
       <div class="form-group">
         <%= f.label(:username, "Username") %>
-        <%= f.text_field :username, class: "form-control" %>
+        <%= f.text_field :username, :required => true, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label(:email, "Email Address") %>
-        <%= f.email_field :email, class: "form-control" %>
+        <%= f.label(:email, "Email Address (must use valid format -- eg: email@domain.tld)") %>
+        <%= f.email_field :email, :required => true, class: "form-control" %>
       </div>
       <div class="form-group half center-block">
-        <%= f.label(:password, "Password") %>
-        <%= f.password_field :password, class: "form-control" %>
+        <%= f.label(:password, "Password (minimum 8 characters)") %>
+        <%= f.password_field :password, placeholder: "Example: p@$w0rd!", :required => true, class: "form-control" %>
       </div>
       <div style="display:inline-block">
         <%= f.submit "Update Profile", class: "btn btn-default center-block" %>
