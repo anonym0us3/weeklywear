@@ -21,6 +21,13 @@
 
               <!-- Else, do nothing -->
               <% else %>
+
+              <!-- As part of "doing nothing", show a votes counter for current_user's t-shirts -->
+              <div class="votecounter" style="text-align:center">
+                <article>
+                  # of votes: <%= tshirt.votes.count %>
+                </article>
+              </div>
               <% end %>
           </div>
         <% end %>
