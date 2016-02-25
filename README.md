@@ -8,7 +8,6 @@ weeklywear allows users to upload photos of their t-shirts for other users to vo
 * **[Heroku Link](#heroku-hosted-project)**
 * **[Technologies](#technologies):** What languages, gems, libraries, and frameworks are being used?
 * **[Future Development](#future-development):** What are we hoping to add?
-* **[Contributors](#contributors):** Who made all of this happen?
 
 # Getting Started
 * Fork this repo and clone it onto your local machine.
