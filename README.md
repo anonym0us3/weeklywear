@@ -1,7 +1,7 @@
 ![PRESENTATION](http://i.imgur.com/IDfbpx2.png)
 
 # weeklywear: An App for the Indecisive
-weeklywear allows users to upload photos of their t-shirts for other users to vote on. Users can vote once per day (Feature Coming Soon!) for each user who has uploaded tees. Every Sunday, weeklywear sends out an email [Feature Coming Soon!] to each user who uploaded shirts which received votes, of which tee had the most vosts for that week. That tshirt is removed from circulation (Feature Coming Soon!) for the following week and the user is then required (honesty-pending) to wear the winning design the following day.
+weeklywear allows users to upload photos of their t-shirts for other users to vote on. Users can vote once per day [Feature Coming Soon!] for each user who has uploaded tees. Every Sunday, weeklywear sends out an email [Feature Coming Soon!] to each user who uploaded shirts which received votes, of which tee had the most vosts for that week. That tshirt is removed from circulation [Feature Coming Soon!] for the following week and the user "should" then (honesty-pending) wear the winning design the following day.
 
 ## Contents
 * **[Getting Started](#getting-started):** How to work with the code?
@@ -63,7 +63,7 @@ weeklywear allows users to upload photos of their t-shirts for other users to vo
 # Future Development
 * Limit user to voting once per day, per every other users' t-shirts
 * Use Heroku Scheduler to run CRON jobs on the server to check for Win conditions each week
-** Win condition would consist of each user's top-voted t-shirt being mailed to the user, and then removed from circulation so that it cannot be voted on again until the user resets the DB.
-** To reset the DB, user would have a "Laundry" (aka reset) button on their profile page.
+* Win condition would consist of each user's top-voted t-shirt being mailed to the user, and then removed from circulation so that it cannot be voted on again until the user resets the DB.
+* To reset the DB, user would have a "Laundry" (aka reset) button on their profile page.
 * Use ActionMailer gem to send digest each Sunday to each user who had votes recorded for 1 or more of their t-shirts, letting them know which t-shirt had the most votes
 * On a user's profile page, if the user has t-shirts with votes, display the two with the most votes.
