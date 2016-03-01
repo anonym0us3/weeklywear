@@ -18,9 +18,8 @@ class User < ActiveRecord::Base
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
 
-  VALID_PASSWORD_REGEX = /\S.{7,}/
   validates :password,
-    format: { with: VALID_PASSWORD_REGEX }
+    length: { minimum: 8 }
 
   def self.confirm(params)
     @user = User.find_by({email: params[:email]})
